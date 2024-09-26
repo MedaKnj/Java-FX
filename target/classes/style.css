@@ -1,0 +1,71 @@
+.root {
+    -fx-background-color: #7e7385;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.text-field, .button, .toggle-button, .table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #FFFFFF;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-border-width: 2px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #7e7385;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+}
+
+.table-cell:hover, .table-cell:focused {
+    -fx-border-color: #75606F;
+    -fx-cursor: hand;
+}
+
+.text-field:hover {
+    -fx-background-color: #7a2980;
+}
+
+.toggle-button:hover, .toggle-button:focused {
+    -fx-border-color: #75606F;
+    -fx-cursor: hand;
+    -fx-background-color: #7a2980;
+}
+
+.radio-button:hover, .radio-button:focused {
+    -fx-background-color: #7a2980;
+}
+
+.text-field:focused {
+    -fx-background-color: white;
+    -fx-text-fill: #7e7385;
+}
+
+#closeBtn {
+    -fx-graphic: url('close_icon.png');
+    -fx-background-color: transparent;
+    -fx-border-width: 0.0;
+}
+#closeBtn:hover {
+    -fx-graphic: url('close_icon_hover_30.png');
+}
+
+.button:hover {
+    -fx-border-color: #75606F;
+    -fx-cursor: hand;
+    -fx-background-color: #7a2980;
+}
+
+.button:pressed {
+    -fx-border-color: #6d3d8a;
+    -fx-background-color: #6d3d8a;
+}

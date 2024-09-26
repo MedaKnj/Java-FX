@@ -1,0 +1,17 @@
+# Ignoriši Maven build direktorijum
+target/
+
+# Ignoriši IntelliJ IDEA konfiguracione fajlove
+.idea/
+*.iml
+*.iws
+
+# Ignoriši operativni sistem specifične fajlove
+.DS_Store
+Thumbs.db
+
+# Ignoriši log fajlove
+*.log
+
+# Ignoriši fajlove sa osetljivim podacima
+*.env

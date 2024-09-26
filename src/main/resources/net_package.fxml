@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane alignment="CENTER" hgap="5" vgap="5" xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="org.example.controller.CustomerPackageController">
+
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15"/>
+    </padding>
+
+    <children>
+
+        <HBox alignment="TOP_RIGHT" spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <children>
+                <Button fx:id="closeBtn" onAction="#closeForm"/>
+            </children>
+        </HBox>
+
+        <Label style="-fx-font-size: 30px; -fx-font-weight: normal;" text="Add internet package:" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+            <font>
+                <Font name="Courier New Bold"/>
+            </font>
+        </Label>
+
+        <TextField fx:id="firstName" GridPane.columnIndex="0" GridPane.rowIndex="3" promptText="First name"/>
+        <TextField fx:id="lastName" GridPane.columnIndex="0" GridPane.rowIndex="4" promptText="Last name"/>
+        <TextField fx:id="address" GridPane.columnIndex="0" GridPane.rowIndex="5" promptText="Address"/>
+
+        <Label text="Speed (mb/s):" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+
+        <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="7">
+
+            <children>
+
+                <fx:define>
+                    <ToggleGroup fx:id="groupSpeed"/>
+                </fx:define>
+
+                <ToggleButton fx:id="speed_2" text="2" prefWidth="50" toggleGroup="$groupSpeed"/>
+                <ToggleButton fx:id="speed_5" text="5" prefWidth="50" toggleGroup="$groupSpeed"/>
+                <ToggleButton fx:id="speed_10" text="10" prefWidth="50" toggleGroup="$groupSpeed"/>
+                <ToggleButton fx:id="speed_20" text="20" prefWidth="50" toggleGroup="$groupSpeed"/>
+                <ToggleButton fx:id="speed_50" text="50" prefWidth="50" toggleGroup="$groupSpeed"/>
+                <ToggleButton fx:id="speed_100" text="100" prefWidth="50" toggleGroup="$groupSpeed"/>
+
+            </children>
+
+        </HBox>
+
+        <Label text="Bandwidth:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+
+        <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="10">
+
+            <children>
+
+                <fx:define>
+                    <ToggleGroup fx:id="groupBandwidth"/>
+                </fx:define>
+
+                <ToggleButton fx:id="bandwidth_1" text="1" toggleGroup="$groupBandwidth"/>
+                <ToggleButton fx:id="bandwidth_5" text="5" toggleGroup="$groupBandwidth"/>
+                <ToggleButton fx:id="bandwidth_10" text="10" toggleGroup="$groupBandwidth"/>
+                <ToggleButton fx:id="bandwidth_100" text="100" toggleGroup="$groupBandwidth"/>
+                <ToggleButton fx:id="bandwidthFlat" text="Flat" toggleGroup="$groupBandwidth"/>
+
+            </children>
+
+        </HBox>
+
+        <Label text="Duration:" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+
+        <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="13">
+
+            <children>
+                <fx:define>
+                    <ToggleGroup fx:id="groupDuration"/>
+                </fx:define>
+                <RadioButton style="-fx-text-fill: white;" fx:id="duration_1" text="1 year" toggleGroup="$groupDuration"/>
+                <RadioButton style="-fx-text-fill: white;" fx:id="duration_2" text="2 years" toggleGroup="$groupDuration"/>
+
+            </children>
+
+        </HBox>
+
+        <HBox alignment="BOTTOM_RIGHT" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="15">
+            <children>
+                <Button mnemonicParsing="true" text="_Save Package" fx:id="saveBtn" onAction="#savePackage"/>
+                <Button mnemonicParsing="true" text="_Clear Form" fx:id="clearBtn" onAction="#clearData"/>
+                <Button mnemonicParsing="true" text="_Delete Table Row" fx:id="deleteBtn" onAction="#deletePackage"/>
+            </children>
+        </HBox>
+
+        <TableView fx:id="packageTableView" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="14">
+
+            <columns>
+                <TableColumn fx:id="firstNameColumn" text="First Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="lastNameColumn" text="Last Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="addressColumn" text="Address">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="address"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="speedColumn" text="Speed (mb/s)">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="selectedSpeed"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="bandwidthColumn" text="Bandwidth">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="selectedBandwidth"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="durationColumn" text="Duration">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="selectedDuration"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+    </children>
+
+</GridPane>
